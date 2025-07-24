@@ -2,98 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearShot – Remove Image Background</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3em;
-      margin-bottom: 10px;
-      color: #00ffe7;
-      text-shadow: 0 0 10px #00ffe7;
-    }
-
-    p.subtitle {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-      padding: 20px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-      border-radius: 12px;
-    }
-
-    .footer {
-      margin-top: 25px;
-      font-size: 0.9em;
-      color: #aaa;
-    }
-
-    .footer span {
-      color: #00ffe7;
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2em;
-      }
-
-      iframe {
-        height: 500px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      body {
-        padding: 20px 10px;
-      }
-
-      iframe {
-        height: 450px;
-      }
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ClearShot – AI Background Remover</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h1>ClearShot</h1>
-  <p class="subtitle">Instant AI-Powered Background Remover. Free, Fast, and No Login Required.</p>
-
   <div class="container">
-    <iframe src="https://huggingface.co/spaces/akhaliq/U-2-Net" loading="lazy"></iframe>
+    <h1>ClearShot</h1>
+    <p class="tagline">Remove image backgrounds instantly with futuristic AI – free forever.</p>
+
+    <label for="fileInput" class="upload-area">
+      <input type="file" id="fileInput" accept="image/*" />
+      <span>Click or drag an image here</span>
+    </label>
+
+    <div class="preview">
+      <img id="inputImage" alt="Input Image" />
+      <canvas id="outputCanvas"></canvas>
+    </div>
+
+    <button id="downloadBtn" style="display:none;">Download Result</button>
+
+    <footer>
+      <p>Made by Rafael • Powered by AI • ClearShot 2025</p>
+    </footer>
   </div>
 
-  <div class="footer">
-    <p>Made with 💙 by <span>Rafael</span></p>
-  </div>
-
+  <script src="script.js"></script>
 </body>
 </html>
